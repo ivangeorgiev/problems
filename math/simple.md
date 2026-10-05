@@ -319,3 +319,140 @@ print(count / N)
 
 0.32218
 ```
+
+
+## Random Meeting Time
+
+Two people agree to meet between 12:00 and 13:00.
+
+* Each arrives at a random time uniformly distributed in that hour.
+* Each waits for 10 minutes before leaving.
+
+What is the probability they meet?
+
+### Solution
+
+Answer: $\approx 30.5 \%$
+
+```python
+import random
+
+duration = 60
+wait_interval = 10
+
+N = 1000000
+
+num_meetings = 0
+
+for _ in range(N):
+    time1 = random.uniform(0, duration)
+    time2 = random.uniform(0, duration)
+
+    if abs(time1 - time2) <= wait_interval:
+        num_meetings += 1
+
+print(num_meetings / N)
+```
+
+## Coin Toss Race
+
+You repeatedly toss a fair coin.
+
+* You win if you get 3 heads in a row.
+* You lose if you get 2 tails in a row.
+
+Estimate the probability of winning.
+
+
+## Treasure in a Square
+
+A treasure is hidden at a random location:
+
+* $x \sim U(0,100)$
+* $y \sim U(0,100)$
+
+You search within a circle of radius 25 centimeters at (50, 50).
+
+Estimate the probability of finding the treasure, using a simulation.
+
+
+## Sum of Two Random Numbers
+
+Generate:
+
+* $x \sim U(0,100)$
+* $y \sim U(0,100)$
+
+Estimate:
+
+$P(x + y > 120)$
+
+
+## Closest Server
+
+Three servers have random response times:
+
+* $A \sim U(40,100)$
+* $B \sim U(50,90)$
+* $C \sim U(30,120)$
+
+Estimate the probability that server $B$ is the fastest (response time), using simulation.
+
+
+## Random Deployment Failure
+
+A deployment consists of 20 independent steps.
+
+Each steps succeeds with probability 98%.
+
+Estimate the probability that the deployment completes with:
+
+* no failures
+* at most one failure
+
+## Shared Cache Collision
+
+100 users independently chose a cache key:
+
+* $key \sim U(1,1000)$
+
+Estimate the probability that at least on collision occurs, using simulation.
+
+## Random Walk
+
+A robot starts at position 0.
+
+Each second:
+
+* Move +1 with probability 50%
+* Move -1 with probability 50%
+
+After 100 steps, estimate the probability that the robot finishes more than 10 units away from the origin.
+
+
+## Distributed System Availability
+
+A service is available if at least 2 of 3 servers are running.
+
+Server uptimes are:
+
+* A = 99%
+* B = 97%
+* C = 95%
+
+Estimate the overall service availability.
+
+
+## Packet Retry Puzzle
+
+A packet transmission succeeds with probability 30%.
+
+The system retries until success or until 5 attempts have been made.
+
+Estimate:
+
+* Probability of eventual success
+* Average number of attempts used
+
+
+
