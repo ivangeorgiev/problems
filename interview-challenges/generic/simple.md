@@ -153,11 +153,11 @@ $$
 
 ## P8 - The Dice Race
 
-You roll a fair six-sided die repeatedly.
+You roll a fair six-sided die repeatedly. The game round finishes when you roll 1 or 6.
 
-You win if you roll a 6 before you roll a 1.
+You win the round if you roll a 6 before you roll a 1.
 
-Question: What is the probability of winning?
+Question: What is the probability of winning a round?
 
 
 ### Solution

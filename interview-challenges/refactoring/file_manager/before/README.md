@@ -16,8 +16,9 @@ Notes:
 
 Scoring:
 * Total points: 100 points
-* Passing score: 80 points
-* Time allocated: 10 minutes
+* Passing score: 65 points
+* Time allocated: 20 minutes
 
-Additional task (+15 points and additional 5 minutes): Create data files and run the original program.
-Additional task (+30 points and additional 5 minutes): In case the refactoring plan is approved, refactor the code.
+Additional Tasks:
+* Additional task (+15 points and additional 5 minutes): Create data files and run the original program.
+* Additional task (+30 points and additional 5 minutes): In case the refactoring plan is approved, refactor the code.
