@@ -27,3 +27,9 @@ for x,y in numbers():
         max_combination = x, y
 x_max, y_max = max_combination
 print(f"x = {x_max}, y = {y_max}, E = {max_e}")
+
+
+# Here is more pythonic way
+numbers_and_values = ((x, y, compute_expr(x, y)) for x,y in numbers())
+result = max(numbers_and_values, key=lambda v: v[-1] )
+print(*result)
