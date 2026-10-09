@@ -61,3 +61,15 @@ def generate_pairs() -> Iterator:
 
 for pair in generate_pairs():
     print(pair)
+
+
+
+# Permutations variant
+
+from itertools import permutations
+
+for digits in permutations("123456"):
+    for i in range(1, 6):
+        x = int(str("".join(digits[:i])))
+        y = int(str("".join(digits[i:])))
+        print(x, y)
