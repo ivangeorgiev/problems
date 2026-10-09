@@ -13,6 +13,6 @@ Can you find two other numbers with the same property?
 Additional questions:
 
 1. How are you going to validate the result?
-2. What if we need 5 more numbers like the given?
+2. What if we need 5 more numbers?
 3. What is the complexity of the solution?
 
