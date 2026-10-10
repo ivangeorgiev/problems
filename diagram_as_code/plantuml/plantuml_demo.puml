@@ -1,0 +1,42 @@
+@startuml
+left to right direction
+
+package "External Systems" {
+    queue "dcam-events\nKafka Topic" as Kafka
+}
+
+package "Azure" {
+
+    database "datamodel\nAzure SQL" as SQL
+    collections "Key Vault" as KV
+    cloud "management-workspace\nDatabricks" as DBX
+
+    package "AKS Cluster" {
+
+        component "KEDA" as KEDA
+
+        component "orchestrator\n(Scaled Job)" as ORCH
+
+        component "unity API" as UNITY
+        component "avm API" as AVM
+    }
+}
+
+Kafka --> KEDA : monitor lag
+KEDA --> ORCH : scale jobs
+
+Kafka --> ORCH : consume events
+
+ORCH --> UNITY : provision UC objects
+ORCH --> AVM : manage schemas/views
+
+UNITY --> DBX : catalog APIs
+AVM --> DBX : jobs / SQL APIs
+
+KV --> ORCH : SPN credentials
+KV --> UNITY : SPN credentials
+KV --> AVM : SPN credentials
+
+ORCH --> SQL : consumer metadata
+
+@enduml
