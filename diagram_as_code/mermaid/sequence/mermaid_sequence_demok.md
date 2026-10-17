@@ -3,6 +3,7 @@
 config:
   theme: dark
   look: classic
+  fontFamily: Courier
 ---
 
 sequenceDiagram
@@ -31,5 +32,6 @@ autonumber
 
 See also:
 * [Sequence diagrams syntax](https://mermaid.ai/open-source/syntax/sequenceDiagram.html)
+* [Config schema](https://mermaid.ai/open-source/config/schema-docs/config.html)
 
 
