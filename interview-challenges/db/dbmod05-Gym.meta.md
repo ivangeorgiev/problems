@@ -24,6 +24,10 @@ erDiagram
 ```mermaid
 ---
 title: Gym Management System
+# config:
+  # theme: default
+  # look: handDrawn
+  # fontFamily: Courier
 ---
 erDiagram
     activity {
