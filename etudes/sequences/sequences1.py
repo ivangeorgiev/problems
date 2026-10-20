@@ -3,9 +3,11 @@ from collections.abc import Sequence
 
 class MySequence(Sequence):
     """
-    Sequence implements 
+    Custom Sequence classes must implement: 
       * __getitem__ (from Sequence)
       * __len__ (from Sized <|-- Collection <|-- Sequence)
+
+    Sequence presents default implementation for the rest of the inherited abstract methods.
     """
     def __init__(self, *items):
         self._items = list(*items)
