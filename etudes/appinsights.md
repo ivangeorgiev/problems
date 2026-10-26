@@ -1,0 +1,2 @@
+* https://medium.com/algomart/deploying-a-production-grade-fastapi-system-on-azure-from-containerization-to-kubernetes-queues-6304853cb169
+* https://medium.com/@tedisaacs/auto-instrumenting-python-fastapi-and-monitoring-with-azure-application-insights-768a59d2f4b9
