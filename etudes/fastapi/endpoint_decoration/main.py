@@ -80,6 +80,34 @@ async def get_owning_team_id(
     print("After request")
 
 
+async def get_owning_team_id_with_skip(
+    response: Response,
+    request: Request,
+):
+    # Raising exception prevetns the yield from being executed,
+    # so we can skip the endpoint function execution by raising
+    # an exception before the yield.
+    try:
+        raise ValueError("Simulated error")
+        yield 333
+    except ValueError as e:
+        if str(e) == "Simulated error":
+            raise HTTPException(
+                status_code=status.HTTP_400_BAD_REQUEST,
+                detail="Simulated error occurred.",
+            )
+        print(f"Error occurred: {e}")
+    print("After request")
+
+
+@app.get("/func_skip", dependencies=[Depends(get_owning_team_id_with_skip)])
+def func_skip():
+    print("Inside func_skip")
+    return {
+        "result": "123",
+    }
+
+
 @app.get("/func", dependencies=[Depends(get_owning_team_id)])
 def func(
     correlation_id: Annotated[
